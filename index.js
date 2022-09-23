@@ -133,11 +133,48 @@ const promptUser = () => {
     ]);
 };
 
+const promptUserData = readmeData => {
+    readmeData.userData = [];
+
+    return inquirer.prompt([
+        {
+            type: 'input',
+            name: 'github',
+            message: 'Please provide your GitHub username: ',
+            validate: githubInput => {
+                if (githubInput) {
+                    return true;
+                } else {
+                    console.log('Must provide your GitHub username!');
+                    return false;
+                };
+            }
+        },
+        {
+            type: 'input',
+            name: 'email',
+            message: 'Please provide your email address: ',
+            validate: emailInput => {
+                if (emailInput) {
+                    return true;
+                } else {
+                    console.log('Must provide your email!');
+                    return false;
+                };
+            }
+        }
+    ]).then(userDataInput => {
+        readmeData.userData.push(userDataInput);
+        return readmeData;
+    })
+}
+
 // TODO: Create a function to write README file
 function writeToFile(fileName, data) { }
 
 // Function calls
 promptUser()
+    .then(promptUserData)
     .then(readmeData => {
         const pageMd = generateMarkdown(readmeData);
 
