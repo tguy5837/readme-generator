@@ -15,6 +15,14 @@ function generateMarkdown(data) {
 }
 
 module.exports = templateData => {
-  console.log('>>>> templateData! >>>>', templateData);
+  console.log(templateData);
+
+  return `# ${templateData.title}
+![License](https://img.shields.io/badge/License-${license}-green)
+
+### Description
+
+${templateData.description}
+      `;
 
 };
