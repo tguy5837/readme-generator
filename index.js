@@ -78,7 +78,7 @@ const promptUser = () => {
         },
         {
             type: 'input',
-            name: 'pictureUrl',
+            name: 'usagePics',
             message: 'Please provide the path to your image starting with "./": ',
             when: ({ confirmUsagePics }) => {
                 if (confirmUsagePics) {
@@ -115,13 +115,14 @@ const promptUser = () => {
         {
             type: 'confirm',
             name: 'confirmLicense',
-            message: 'Would you like to add a license badge to your README?',
+            message: 'Would you like to add a license to your README?',
             default: true
         },
         {
-            type: 'input',
+            type: 'list',
             name: 'license',
             message: 'Please enter your license: ',
+            choices: ['MIT', 'ISC'],
             when: ({ confirmLicense }) => {
                 if (confirmLicense) {
                     return true;
@@ -129,6 +130,12 @@ const promptUser = () => {
                     return false;
                 }
             }
+        },
+        {
+            type: 'confirm',
+            name: 'confirmTOC',
+            message: 'Would you like to include a Table of Contents in your README?',
+            default: false
         }
     ]);
 };
@@ -169,9 +176,6 @@ const promptUserData = readmeData => {
     })
 }
 
-// TODO: Create a function to write README file
-function writeToFile(fileName, data) { }
-
 // Function calls
 promptUser()
     .then(promptUserData)
@@ -181,6 +185,6 @@ promptUser()
         fs.writeFile('./README.md', pageMd, err => {
             if (err) throw new Error(err);
 
-            console.log('README finished! Checkout README.md in "generated-readme" to see yours!')
+            console.log('README finished! Checkout README.md to see the results and feel free to make any changes!')
         })
     });
