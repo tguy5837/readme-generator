@@ -36,7 +36,7 @@ const promptUser = () => {
             type: 'checkbox',
             name: 'confirmSections',
             message: 'What sections would you like to include in your README?',
-            choices: ['Installation Instructions', 'Usage Information', 'Contribution Guidelines', 'Test Instructions']
+            choices: ['Installation', 'Usage', 'Contributing', 'Tests']
 
         },
         {
@@ -44,7 +44,7 @@ const promptUser = () => {
             name: 'installation',
             message: 'Please provide installation instructions/tips: ',
             when: ({ confirmSections }) => {
-                if (confirmSections.includes('Installation Instructions')) {
+                if (confirmSections.includes('Installation')) {
                     return true;
                 } else {
                     return false;
@@ -56,7 +56,7 @@ const promptUser = () => {
             name: 'usage',
             message: 'Please provide some information on how to use your application: ',
             when: ({ confirmSections }) => {
-                if (confirmSections.includes('Usage Information')) {
+                if (confirmSections.includes('Usage')) {
                     return true;
                 } else {
                     return false;
@@ -69,7 +69,7 @@ const promptUser = () => {
             message: 'Would you like to provide any images?',
             default: true,
             when: ({ confirmSections }) => {
-                if (confirmSections.includes('Usage Information')) {
+                if (confirmSections.includes('Usage')) {
                     return true;
                 } else {
                     return false;
@@ -79,7 +79,7 @@ const promptUser = () => {
         {
             type: 'input',
             name: 'usagePics',
-            message: 'Please provide the path to your image starting with "./": ',
+            message: 'Please provide the path or URL to your image: ',
             when: ({ confirmUsagePics }) => {
                 if (confirmUsagePics) {
                     return true;
@@ -93,7 +93,7 @@ const promptUser = () => {
             name: 'contributionGuidelines',
             message: 'Please enter some guidelines for contributors to keep in mind: ',
             when: ({ confirmSections }) => {
-                if (confirmSections.includes('Contribution Guidelines')) {
+                if (confirmSections.includes('Contributing')) {
                     return true;
                 } else {
                     return false;
@@ -105,7 +105,7 @@ const promptUser = () => {
             name: 'testInstructions',
             message: 'Please enter some instructions for how to test certain features of your app: ',
             when: ({ confirmSections }) => {
-                if (confirmSections.includes('Test Instructions')) {
+                if (confirmSections.includes('Tests')) {
                     return true;
                 } else {
                     return false;
@@ -136,14 +136,7 @@ const promptUser = () => {
             name: 'confirmTOC',
             message: 'Would you like to include a Table of Contents in your README?',
             default: false
-        }
-    ]);
-};
-
-const promptUserData = readmeData => {
-    readmeData.userData = [];
-
-    return inquirer.prompt([
+        },
         {
             type: 'input',
             name: 'github',
@@ -170,19 +163,15 @@ const promptUserData = readmeData => {
                 };
             }
         }
-    ]).then(userDataInput => {
-        readmeData.userData.push(userDataInput);
-        return readmeData;
-    })
+    ]);
 };
 
-const dummyData = [{ title: 'Taylor', description: 'This is a description.', confirmSections: ['Installation Instructions', 'Usage Information', 'Contribution Guidelines', 'Test Instructions'], license: 'ISC' }]
+const dummyData = { title: 'Taylor', description: 'This is a description.', confirmSections: ['Installation-Instructions', 'Contribution-Guidelines', 'Test-Instructions'], confirmTOC: false, license: 'ISC' }
 
 // generateMarkdown(dummyData);
 
 // Function calls
 promptUser()
-    .then(promptUserData)
     .then(readmeData => {
         const pageMd = generateMarkdown(readmeData);
 
