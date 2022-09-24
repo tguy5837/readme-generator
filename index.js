@@ -174,7 +174,11 @@ const promptUserData = readmeData => {
         readmeData.userData.push(userDataInput);
         return readmeData;
     })
-}
+};
+
+const dummyData = [{ title: 'Taylor', description: 'This is a description.', confirmSections: ['Installation Instructions', 'Usage Information', 'Contribution Guidelines', 'Test Instructions'], license: 'ISC' }]
+
+// generateMarkdown(dummyData);
 
 // Function calls
 promptUser()
