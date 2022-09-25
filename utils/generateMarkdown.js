@@ -98,7 +98,7 @@ ${usageInfo}`
 // Return usage pics
 function renderUsagePics(picture) {
   if (picture) {
-    return `!(${picture})`
+    return `![](${picture})`
   } else {
     return ''
   }
