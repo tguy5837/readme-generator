@@ -178,6 +178,6 @@ promptUser()
         fs.writeFile('./generatedReadme/README.md', pageMd, err => {
             if (err) throw new Error(err);
 
-            console.log('README finished! Checkout README.md to see the results and feel free to make any changes!')
+            console.log('README finished! Checkout README.md in the "generatedReadme" folder to see the results and feel free to make any changes!')
         })
     });
