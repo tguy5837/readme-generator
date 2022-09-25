@@ -1,5 +1,4 @@
-// TODO: Create a function that returns a license badge based on which license is passed in
-// If there is no license, return an empty string
+// Return a license badge based on which license is passed in
 function renderLicenseBadge(license) {
   if (license) {
     return `![License](https://img.shields.io/badge/License-${license}-green)`
@@ -8,8 +7,7 @@ function renderLicenseBadge(license) {
   }
 };
 
-// TODO: Create a function that returns the license section of README
-// If there is no license, return an empty string
+// Return the license section of README
 function renderLicenseSection(license) {
   if (license) {
     if (license === 'MIT') {
@@ -52,6 +50,7 @@ PERFORMANCE OF THIS SOFTWARE.`
   }
 };
 
+// Return Table of Contents Title if confirmed
 function renderTocTitle(confirmTOC) {
   if (confirmTOC) {
     return `## Table of Contents`
@@ -60,6 +59,7 @@ function renderTocTitle(confirmTOC) {
   }
 };
 
+// Return Table of Contents if confirmed
 function renderToc(templateData) {
   let sectionMarkdown = ``;
   for (let i = 0; i < templateData.confirmSections.length; i++) {
@@ -73,6 +73,7 @@ function renderToc(templateData) {
   }
 };
 
+// Return installation section
 function renderInstallSection(installationInstructs) {
   if (installationInstructs) {
     return `## Installation
@@ -83,6 +84,7 @@ ${installationInstructs}`
   }
 };
 
+// Return usage section
 function renderUsageSection(usageInfo) {
   if (usageInfo) {
     return `## Usage
@@ -93,6 +95,7 @@ ${usageInfo}`
   }
 };
 
+// Return usage pics
 function renderUsagePics(picture) {
   if (picture) {
     return `!(${picture})`
@@ -101,6 +104,7 @@ function renderUsagePics(picture) {
   }
 };
 
+// Return contribution section
 function renderContributingSection(guidelines) {
   if (guidelines) {
     return `## Contributing
@@ -111,6 +115,7 @@ ${guidelines}`
   }
 };
 
+// return test section
 function renderTestSection(instructions) {
   if (instructions) {
     return `## Tests
@@ -121,6 +126,7 @@ ${instructions}`
   }
 };
 
+// return questions section
 function renderQuestionSection(github, email) {
   return `## Questions
     
@@ -131,6 +137,7 @@ GitHub: [${github}](https://github.com/${github})
 Email: [${email}](mailto:${email})`
 };
 
+// Format and begin creating README
 module.exports = templateData => {
 
   console.log(templateData)
