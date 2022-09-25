@@ -63,7 +63,7 @@ function renderTocTitle(confirmTOC) {
 function renderToc(templateData) {
   let sectionMarkdown = ``;
   for (let i = 0; i < templateData.confirmSections.length; i++) {
-    sectionMarkdown = sectionMarkdown + (`* [${templateData.confirmSections[i]}](#${templateData.confirmSections[i]})
+    sectionMarkdown = sectionMarkdown + (`* [${templateData.confirmSections[i]}](#${templateData.confirmSections[i].toLowerCase()})
 `)
   };
   if (templateData.confirmTOC) {

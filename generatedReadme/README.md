@@ -1,12 +1,13 @@
-# Taylor's README Generator
+# Taylor's README Generator!
+
 ![License](https://img.shields.io/badge/License-ISC-green)
 
 ISC License
-      
+
 Permission to use, copy, modify, and/or distribute this software for any
 purpose with or without fee is hereby granted, provided that the above
 copyright notice and this permission notice appear in all copies.
-      
+
 THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES WITH
 REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF MERCHANTABILITY
 AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY SPECIAL, DIRECT,
@@ -17,38 +18,37 @@ PERFORMANCE OF THIS SOFTWARE.
 
 ## Description
 
-This is Taylor's README generator! It is pretty awesome.
+This is Taylor's README generator and it is awesome!
 
 ## Table of Contents
-* [Installation](#Installation)
-* [Usage](#Usage)
-* [Contributing](#Contributing)
-* [Tests](#Tests)
 
+- [Installation](#installation)
+- [Usage](#usage)
+- [Contributing](#contributing)
+- [Tests](#tests)
 
 ## Installation
-    
-These are installation instructions to help you run the application!
+
+These are some tips to help you install everything you need to run this application!
 
 ## Usage
-    
+
 This is how you use the application!
 
-!(./images/coding-meme.jpg)
+![](../images/coding-meme.jpg)
 
 ## Contributing
-    
-These are some guidelines on how you can contribute to my project!
+
+These are some guidelines you should keep in mind if you would like to contribute to the project!
 
 ## Tests
-    
-This is how you test different features in my application.
+
+Here are some insctructions on how to test the app!
 
 ## Questions
-    
+
 ### How to reach me:
 
 GitHub: [tguy5837](https://github.com/tguy5837)
 
 Email: [tguy5837@gmail.com](mailto:tguy5837@gmail.com)
-

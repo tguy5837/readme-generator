@@ -14,7 +14,7 @@ To run this application, first make sure that you have installed NodeJS and then
 
 ## Usage
 
-Confirm that you are in the root directory of your repository and run the command 'node index.js'. This will run the application and begin to prompt the user for questions. If you plan to add a picture to the usage section, please have the file path ready to go when you begin running the README generator.
+Confirm that you are in the root directory of your repository and run the command 'node index.js'. This will run the application and begin to prompt the user for questions. If you plan to add an image from a directory you have an image folder in the root directory of the project, be sure to add '../' when listing the path as the generated readme will NOT be in the root directory of the project.
 
 When your README has been generated, please be sure to check the 'generatedReadme' folder for your README. This README file is NOT the generated one.
 
