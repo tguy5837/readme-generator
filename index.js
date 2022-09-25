@@ -175,7 +175,7 @@ promptUser()
     .then(readmeData => {
         const pageMd = generateMarkdown(readmeData);
 
-        fs.writeFile('./README.md', pageMd, err => {
+        fs.writeFile('./generatedReadme/README.md', pageMd, err => {
             if (err) throw new Error(err);
 
             console.log('README finished! Checkout README.md to see the results and feel free to make any changes!')

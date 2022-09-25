@@ -1,7 +1,4 @@
 // TODO: Create a function that returns a license badge based on which license is passed in
-
-const { toNamespacedPath } = require("path");
-
 // If there is no license, return an empty string
 function renderLicenseBadge(license) {
   if (license) {
@@ -78,7 +75,7 @@ function renderToc(templateData) {
 
 function renderInstallSection(installationInstructs) {
   if (installationInstructs) {
-    return `### Installation
+    return `## Installation
     
 ${installationInstructs}`
   } else {
@@ -88,7 +85,7 @@ ${installationInstructs}`
 
 function renderUsageSection(usageInfo) {
   if (usageInfo) {
-    return `### Usage
+    return `## Usage
     
 ${usageInfo}`
   } else {
@@ -106,7 +103,7 @@ function renderUsagePics(picture) {
 
 function renderContributingSection(guidelines) {
   if (guidelines) {
-    return `### Contributing
+    return `## Contributing
     
 ${guidelines}`
   } else {
@@ -116,7 +113,7 @@ ${guidelines}`
 
 function renderTestSection(instructions) {
   if (instructions) {
-    return `### Tests
+    return `## Tests
     
 ${instructions}`
   } else {
@@ -127,7 +124,7 @@ ${instructions}`
 function renderQuestionSection(github, email) {
   return `## Questions
     
-#### How to reach me:
+### How to reach me:
 
 GitHub: [${github}](https://github.com/${github})
 
